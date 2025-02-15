@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patitas Felices - Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: url("{{ url_for('static', filename='img/perrogato.png') }}") no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        nav {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: blue;
+        }
+
+        .login-container {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 300px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo-container img {
+            max-width: 80%;
+            height: auto;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid white;
+            border-radius: 5px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        .login-container input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .login-container button:hover {
+            background-color: darkblue;
+        }
+
+        .recover-password {
+            margin-top: 15px;
+            display: block;
+            text-decoration: none;
+            color: blue;
+            font-size: 14px;
+            padding: 8px;
+            border-radius: 5px;
+            background-color: white;
+            border: 1px solid blue;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .recover-password:hover {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+    <script>
+        function iniciarSesion() {
+            let usuario = document.getElementById("usuario").value;
+            let password = document.getElementById("password").value;
+            
+            if (usuario === "" || password === "") {
+                alert("Por favor, completa todos los campos.");
+                return;
+            }
+
+            // Simulación de redirección con usuario (se debe implementar backend real)
+            alert("Bienvenido, " + usuario + "!");
+            window.location.href = "/";
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="/"> <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Patitas Felices" width="120"> </a>
+        </div>
+        <div class="nav-links">
+            <a href="/">Inicio</a>
+        </div>
+    </nav>
+    
+    <div class="login-container">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Patitas Felices">
+        </div>
+        <h2>Iniciar Sesión</h2>
+        <input type="text" id="usuario" name="usuario" placeholder="Usuario">
+        <input type="password" id="password" name="password" placeholder="Contraseña">
+        <button onclick="iniciarSesion()">Ingresar</button>
+        <a href="/recuperacion" class="recover-password">¿Olvidaste tu contraseña?</a>
+    </div>
+</body>
+</html>

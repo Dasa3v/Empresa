@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<!-- Carrusel de imágenes -->
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{{ url_for('static', filename='img/familia.png') }}" class="d-block w-100 carousel-img" alt="Mascotas felices">
+        </div>
+        <div class="carousel-item">
+            <img src="{{ url_for('static', filename='img/mascota.jpg') }}" class="d-block w-100 carousel-img" alt="Cuidado de mascotas">
+        </div>
+        <div class="carousel-item">
+            <img src="{{ url_for('static', filename='img/perrogato.png') }}" class="d-block w-100 carousel-img" alt="Paseo de mascotas">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+</div>
+
+<!-- Secciones en cuadros -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="info-box">
+                <h3>Sobre Nosotros</h3>
+                <p>Somos una empresa dedicada al bienestar de tus mascotas...</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="info-box">
+                <h3>Horarios</h3>
+                <p>Lunes a Viernes: 8 AM - 6 PM <br> Sábados: 9 AM - 2 PM</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="info-box">
+                <h3>Servicios</h3>
+                <p>Aseo, paseo, cuidado personalizado y venta de productos para mascotas.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="info-box">
+                <h3>Nuestro Personal</h3>
+                <p>Contamos con expertos en cuidado animal, veterinarios y paseadores certificados.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .carousel-img {
+        height: 500px; /* Ajusta según necesites */
+        object-fit: cover; /* Recorta la imagen para llenar el espacio sin distorsión */
+    }
+</style>
+
+{% endblock %}
