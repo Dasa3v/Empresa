@@ -1,0 +1,110 @@
+/* Estilo del contenedor del menú desplegable */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Botón del usuario */
+.dropdown button {
+    background-color: blue;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.dropdown button:hover {
+    background-color: white;
+    color: blue;
+}
+
+/* Contenedor del menú desplegable */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 150px;
+    max-width: 200px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* Enlaces dentro del menú */
+.dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 193, 7, 0.7);
+}
+
+/* Mostrar menú al hacer hover en el contenedor */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.recovery-container {
+    background: url("{{ url_for('static', filename='img/perrogato.png') }}") no-repeat center center fixed;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 320px;
+}
+
+.form-box {
+    background: rgba(255, 255, 255, 0.7); /* Fondo blanco semi-transparente */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 320px;
+}
+
+
+#registro-page {
+    background: url("/static/img/cuidados.jpg") no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#recuperacion-page {
+    background: url("/static/img/mascota.jpg") no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+    background-color: #343a40;
+    color: white;
+    padding: 7px;      /* Reduce el padding; prueba con 5px si quieres aún más pequeño */
+    text-align: center;
+    font-size: 1rem;  /* Disminuye el tamaño de fuente si deseas un footer más compacto */
+}
