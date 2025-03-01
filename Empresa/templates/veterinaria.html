@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<div class="container my-4">
+    <h1>Listado de Veterinarias</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Dirección</th>
+                <th>Ciudad</th>
+                <th>Contacto</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Fila de ejemplo 1 -->
+            <tr>
+                <td>Veterinaria Central</td>
+                <td>Calle Falsa 123</td>
+                <td>Ciudad Ejemplo</td>
+                <td>555-1234</td>
+                <td>
+                    <a href="#" class="btn btn-primary btn-sm">Editar</a>
+                    <a href="#" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+            <!-- Fila de ejemplo 2 -->
+            <tr>
+                <td>Clínica Animal</td>
+                <td>Avenida Siempre Viva 456</td>
+                <td>Ciudad Modelo</td>
+                <td>555-5678</td>
+                <td>
+                    <a href="#" class="btn btn-primary btn-sm">Editar</a>
+                    <a href="#" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="#" class="btn btn-success">Agregar nueva Veterinaria</a>
+</div>
+{% endblock %}

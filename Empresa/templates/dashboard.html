@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<!-- dashboard.html -->
+
+
+<!-- Logo centrado -->
+<div class="text-center my-4">
+    <img src="/static/img/logo.png" class="img-fluid w-25">
+</div>
+
+<div class="dashboard container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-5 mb-4">
+            <div class="card h-100 text-center">
+                <img src="/static/img/categoria.png" class="card-img-top img-fluid" alt="Servicios" style="height: 150px; object-fit: cover;">
+                <div class="card-body">
+                    <h3 class="card-title">Citas</h3>
+                    <p class="card-text">Información sobre las citas para atender a tu mascota</p>
+                    <a href="{{ url_for('citas') }}" class="btn btn-primary">Gestión de Citas</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-5 mb-4">
+            <div class="card h-100 text-center">
+                <img src="/static/img/cuidador.jpg" class="card-img-top img-fluid" alt="Cuidadores" style="height: 150px; object-fit: cover;">
+                <div class="card-body">
+                    <h3 class="card-title">Cuidadores</h3>
+                    <p class="card-text">Información sobre los cuidadores y su disponibilidad</p>
+                    <a href="{{ url_for('cuidadores') }}" class="btn btn-primary">Gestión de cuidadores</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row justify-content-center">
+        <div class="col-md-5 mb-4">
+            <div class="card h-100 text-center">
+                <img src="/static/img/producto.jpg" class="card-img-top img-fluid" alt="Clientes" style="height: 150px; object-fit: cover;">
+                <div class="card-body">
+                    <h3 class="card-title">Veterinarias</h3>
+                    <p class="card-text">Información de las Veterinarias afiliadas a nosotros</p>
+                    <a href="{{ url_for('veterinaria') }}" class="btn btn-primary">Gestión de Veterinarias</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-5 mb-4">
+            <div class="card h-100 text-center">
+                <img src="/static/img/tratamiento.png" class="card-img-top img-fluid" alt="Productos" style="height: 150px; object-fit: cover;">
+                <div class="card-body">
+                    <h3 class="card-title">Productos</h3>
+                    <p class="card-text">Información sobre los productos para mascotas</p>
+                    <a href="{{ url_for('productos') }}" class="btn btn-primary">Gestión de productos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

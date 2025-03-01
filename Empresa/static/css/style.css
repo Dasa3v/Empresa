@@ -1,0 +1,170 @@
+/* 
+   1) CONTENEDOR DEL MENÚ DESPLEGABLE
+   position: relative -> para posicionar elementos secundarios de forma absoluta.
+   display: inline-block -> para que el menú aparezca en línea y solo ocupe el espacio necesario.
+*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* 
+   2) BOTÓN DEL USUARIO
+   Define colores, padding, bordes y comportamiento al pasar el ratón (hover).
+*/
+.dropdown button {
+    background-color: blue;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* 
+   2.1) EFECTO HOVER EN EL BOTÓN
+   Invierte los colores al pasar el ratón.
+*/
+.dropdown button:hover {
+    background-color: white;
+    color: blue;
+}
+
+/* 
+   3) CONTENEDOR DEL MENÚ DESPLEGABLE
+   Por defecto está oculto (display: none).
+   position: absolute y right: 0 -> se alinea a la derecha del contenedor.
+   box-shadow -> sombra para resaltar.
+   border-radius -> esquinas redondeadas.
+   z-index -> lo muestra encima de otros elementos.
+*/
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 150px;
+    max-width: 200px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* 
+   4) ENLACES DENTRO DEL MENÚ
+   Se muestran como bloques, sin subrayado, y con un suave efecto al cambiar el fondo.
+*/
+.dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+/* 
+   4.1) EFECTO HOVER EN LOS ENLACES DEL MENÚ
+   Cambia el color de fondo cuando se pasa el ratón por encima.
+*/
+.dropdown-content a:hover {
+    background-color: rgba(255, 193, 7, 0.7);
+}
+
+/* 
+   5) MOSTRAR MENÚ AL HACER HOVER EN EL CONTENEDOR
+   Cuando el ratón está sobre .dropdown, se muestra el contenido desplegable.
+*/
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* 
+   6) .RECOVERY-CONTAINER
+   Contenedor con imagen de fondo, padding y sombra.
+   text-align: center -> centra el texto internamente.
+   width -> fija el ancho a 320px.
+*/
+.recovery-container {
+    background: url("{{ url_for('static', filename='img/perrogato.png') }}") no-repeat center center fixed;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 320px;
+}
+
+/* 
+   7) .FORM-BOX
+   Fondo blanco semitransparente, padding, sombra y ancho fijo.
+*/
+.form-box {
+    background: rgba(255, 255, 255, 0.7); /* Fondo blanco semi-transparente */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 320px;
+}
+
+/* 
+   8) #REGISTRO-PAGE
+   Imagen de fondo, ajustada a la pantalla completa (height: 100vh).
+   display: flex -> para centrar contenido horizontal y verticalmente.
+*/
+#registro-page {
+    background: url("/static/img/cuidados.jpg") no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 
+   9) #RECUPERACION-PAGE
+   Igual que #registro-page, pero con otra imagen.
+*/
+#recuperacion-page {
+    background: url("/static/img/mascota.jpg") no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 
+   10) HTML, BODY A 100% DE ALTURA
+   Para ocupar la pantalla completa.
+*/
+html, body {
+    height: 100%;
+}
+
+/* 
+   11) BODY COMO CONTENEDOR FLEX
+   display: flex y flex-direction: column -> para que el footer pueda ir al final.
+*/
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 
+   12) FOOTER
+   margin-top: auto -> empuja el footer hacia la parte inferior.
+   background-color: #343a40 y color: white -> colores de fondo y texto.
+   padding: 7px -> espaciado interno.
+   text-align: center -> centra el texto.
+   font-size: 1rem -> tamaño de fuente.
+*/
+footer {
+    margin-top: auto;
+    background-color: #343a40;
+    color: white;
+    padding: 7px;
+    text-align: center;
+    font-size: 1rem;
+}
