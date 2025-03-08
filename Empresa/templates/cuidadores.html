@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<div id="cuidadores-page">
+    <div class="cuidadores-container">
+        <h1>Cuidadores</h1>
+        <p>¡Bienvenido al Panel de Cuidadores!</p>
+        <button class="btn btn-success">+ Añadir Cuidador</button>
+        
+        <table class="table table-striped text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Identificación</th>
+                    <th>Nombres y Apellidos</th>
+                    <th>Categoría</th>
+                    <th>Estado</th>
+                    <th>Mascotas Asignadas</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1001</td>
+                    <td>Juan Pérez</td>
+                    <td>Paseador</td>
+                    <td>Activo</td>
+                    <td>5</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm">Actualizar</button>
+                        <button class="btn btn-danger btn-sm">Eliminar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>1002</td>
+                    <td>María Gómez</td>
+                    <td>Cuidador en casa</td>
+                    <td>Activo</td>
+                    <td>3</td>
+                    <td>
+                        <button class="btn btn-primary btn-sm">Actualizar</button>
+                        <button class="btn btn-danger btn-sm">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="text-center">2 Registros.</p>
+    </div>
+</div>
+{% endblock %}
